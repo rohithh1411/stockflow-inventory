@@ -5,11 +5,11 @@
   "engines": { "node": ">=20.19" },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "prisma generate --schema=prisma/schema.postgres.prisma && next build",
     "start": "next start",
     "seed": "node prisma/seed.js",
     "test": "node scripts/test.mjs",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate --schema=prisma/schema.postgres.prisma"
   },
   "prisma": { "seed": "node prisma/seed.js" },
   "dependencies": {
